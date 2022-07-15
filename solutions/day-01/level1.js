@@ -24,4 +24,5 @@ console.log(itCompanies[0])
 console.log(itCompanies[itCompanies.length - 1])
 console.log(itCompanies[3])
 //10.
+console.log(itCompanies)
 

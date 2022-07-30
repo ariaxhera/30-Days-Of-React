@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        .app {
+            background: rgb(236, 226, 226);
+            font-family: 'Montserrat';
+        }
+    </style>
+</head>
+<body>
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    const rootElement = document.querySelector('.root')
+
+    const name = 'Aria Hedera'
+    const country = 'Sweden'
+    const title = 'Spawn from hell'
+    const gender = 'female'
+    const email = 'take me out to dinner first'
+    const phone = '214321341234'
+    
+    const style = { fontSize: '24px'}
+    
+    const arr= ['poggy', 'cant', 'code']    
+    const filteredarr = arr.map((arr) => <li key={arr}>{arr}</li>)
+    
+    const details = (
+      <details style={style}>
+        <h1>Name: {name}</h1>
+        <p>Country: {country} </p>
+        <p>Title: {title} </p>
+        <p>Gender: {gender} </p>
+        <p>Email: {email} </p>
+        <p>Phone: {phone}</p>
+        </details>
+        )
+        
+        const array = (
+          <array>{filteredarr}</array>   
+    )
+
+    const footer = (
+        <footer style={{fontSize: '6px'}}>
+            <h1>made by aria</h1>
+        </footer>
+    )
+
+    const app = (
+        <div className='app'>
+            {details}
+            {array}
+            {footer}
+            
+        </div>
+      )
+
+    ReactDOM.render(app, rootElement)
+</script>
+</body>
+</html>

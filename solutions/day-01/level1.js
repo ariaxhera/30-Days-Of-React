@@ -47,10 +47,4 @@ let index = itCompanies.indexOf('Apple');
     console.log('not found');
 };
 //14.
-let indexofit = itCompanies.indexOf('o');
-if (indexofit != +1) {
-    console.log(itCompanies.slice(indexofit)) //fix
-} else {
-    console.log("didn't work");
-};
 

@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom'
 import asabenehImage from './images/asabenehImage.jpg'
 import frontend from './images/frontend_technologies.png'
 
-const user = (
-  <div>
-    <img src={asabenehImage} alt='asabeneh' />
-  </div>
-)
-
 const rootElement = document.getElementById('root')
 
 const welcome = 'Welcome to 30 Days Of React'
@@ -20,8 +14,53 @@ const author = {
 }
 const date = 'Oct 2, 2020'
 
-// JSX element, header
-const header = (
+
+// EXERCISES ///////////////////////////////////////////////////////////////////////////////////
+
+// const exercise1 = (
+//   <div>
+//     <img src={frontend} alt='website' />
+//       <div>
+//       </div>
+//   </div>
+// )
+
+// const Exercise2 = () => (
+//   <div style={{ margin: '40px', maxHeight: '80vh', display: 'flex', alignItems: 'center', flexDirection: 'column', background: 'lightblue', borderRadius: '10px'}}>
+//     <h1 style={{marginTop: '60px', marginBottom: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontFamily: 'monospace', fontSize: '36px'}}>Subcribe</h1>
+//       <p style={{ display: 'flex', marginBottom: '40px', justifyContent: 'center', alignItems: 'center', opacity: '60%'}}>Sign up with your email address to receive news and updates</p>
+//       <div style={{ display: 'flex', justifyItems: 'center', alignItems: 'center', flexDirection: 'column'}}>
+//       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+//       <input placeholder='First Name' style={{ padding: '5px', borderRadius: '4px', margin: '5px', borderWidth: '0px', height: '30px', width: '200px'}} key='name'></input>
+//       <input placeholder='Last Name' style={{ padding: '5px', borderRadius: '4px', margin: '5px', borderWidth: '0px', height: '30px', width: '200px'}} key='lname'></input>
+//       <input placeholder='Email' style={{ padding: '5px', borderRadius: '4px', margin: '5px', borderWidth: '0px', height: '30px', width: '200px'}} key='email'></input>
+//       </div>
+//       <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
+//       <button style={{ width: '300px', height: '40px', borderRadius: '4px', background: 'coral', borderColor: 'coral', margin: '40px', borderWidth: '0px', color: 'white', fontFamily: 'sans-serif', fontSize: '14px'}} key='button'>Subcribe</button>
+//       </div>
+//       </div>
+//   </div>
+// )
+
+// const RandomColors = () => (
+//   <div style={{margin: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+//     <button style={{ background: '#518cef', borderWidth: '0px', borderRadius: '4px', width: '80vw', height: '50px', margin: '1px'}}>#518cef</button>
+//     <button style={{ background: '#3b10c4', borderWidth: '0px', borderRadius: '4px', width: '80vw', height: '50px', margin: '1px'}}>#3b10c4</button>
+//     <button style={{ background: '#9aede6', borderWidth: '0px', borderRadius: '4px', width: '80vw', height: '50px', margin: '1px'}}>#9aede6</button>
+//     <button style={{ background: '#8ee763', borderWidth: '0px', borderRadius: '4px', width: '80vw', height: '50px', margin: '1px'}}>#8ee763</button>
+//     <button style={{ background: '#a30dd0', borderWidth: '0px', borderRadius: '4px', width: '80vw', height: '50px', margin: '1px'}}>#a30dd0</button>    
+//   </div>
+// )
+
+// const FrImage = () => (
+//   <div>
+//     <img src='./images/frontend_technologies.jpg'></img>
+//   </div>
+// )
+
+// EXERCISES ///////////////////////////////////////////////////////////////////////////////////
+
+const Header = () => ( 
   <header>
     <div className='header-wrapper'>
       <h1>{welcome}</h1>
@@ -33,7 +72,7 @@ const header = (
       <small>Date: {date}</small>
     </div>
   </header>
-)
+  )
 
 const numOne = 3
 const numTwo = 2
@@ -59,8 +98,17 @@ const personAge = (
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
+const UserCard = () => (
+  <div className='user-card'>
+    <img src={asabenehImage} alt='asabeneh image' />
+    <h2>
+      {author.firstName} {author.lastName}
+    </h2>
+  </div>
+)
+
 // JSX element, main
-const main = (
+const Main = () => (
   <main>
     <div className='main-wrapper'>
       <p>
@@ -73,15 +121,34 @@ const main = (
       <ul>{techsFormatted}</ul>
       {result}
       {personAge}
-      {user}
     </div>
   </main>
 )
 
 const copyRight = 'Copyright 2020'
 
+const buttonStyles = {
+  padding: '10px 20px',
+  background: 'rgb(0, 255, 0',
+  border: 'none',
+  borderRadius: 5,
+}
+const Button = () => <button style={buttonStyles}> action </button>
+
+const hexaColor = () => {
+  let str = '0123456789avcdef'
+  let color = ''
+  for (let i = 0; i < 6; i++) {
+    let index = Math.floor(Math.random() * str.length)
+    color += str[index]
+  }
+  return '#' + color
+}
+
+const HexaColor = () => <div>{hexaColor()}</div>
+
 // JSX element, footer
-const footer = (
+const Footer = () => (
   <footer>
     <div className='footer-wrapper'>
       <p>{copyRight}</p>
@@ -89,40 +156,24 @@ const footer = (
   </footer>
 )
 
-const exercise1 = (
-  <div>
-    <img src={frontend} alt='website' />
-      <div>
-      </div>
-  </div>
-)
 
-const exercise2 = (
-  <div style={{ margin: '40px', maxHeight: '80vh', display: 'flex', alignItems: 'center', flexDirection: 'column', background: 'lightblue', borderRadius: '10px'}}>
-    <h1 style={{marginTop: '60px', marginBottom: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontFamily: 'monospace', fontSize: '36px'}}>Subcribe</h1>
-      <p style={{ display: 'flex', marginBottom: '40px', justifyContent: 'center', alignItems: 'center', opacity: '60%'}}>Sign up with your email address to receive news and updates</p>
-      <div style={{ display: 'flex', justifyItems: 'center', alignItems: 'center', flexDirection: 'column'}}>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-      <input placeholder='First Name' style={{ padding: '5px', borderRadius: '4px', margin: '5px', borderWidth: '0px', height: '30px', width: '200px'}} key='name'></input>
-      <input placeholder='Last Name' style={{ padding: '5px', borderRadius: '4px', margin: '5px', borderWidth: '0px', height: '30px', width: '200px'}} key='lname'></input>
-      <input placeholder='Email' style={{ padding: '5px', borderRadius: '4px', margin: '5px', borderWidth: '0px', height: '30px', width: '200px'}} key='email'></input>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
-      <button style={{ width: '300px', height: '40px', borderRadius: '4px', background: 'coral', borderColor: 'coral', margin: '40px', borderWidth: '0px', color: 'white', fontFamily: 'sans-serif', fontSize: '14px'}} key='button'>Subcribe</button>
-      </div>
-      </div>
-  </div>
-)
 
 // JSX element, app
-const app = (
+const App = () => (
   <div className='app'>
-    {header}
-    {main}
-    {footer}
+    <Header />
+    <Main />
+    <UserCard />
+    <Footer />
+    <Button />
+    <HexaColor />
+    {/*/////////////////////////////////////EXERCISES//////////////////////////////////*/}
+    {/* <FrImage />
+    <Exercise2 />
+    <RandomColors /> 
     {exercise1}
-    {exercise2}
+    {exercise2} */}
   </div>
 )
 
-ReactDOM.render(app, rootElement)
+ReactDOM.render( <App />, rootElement)
